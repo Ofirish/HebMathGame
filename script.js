@@ -22,7 +22,6 @@ const flashcards = [
 ];
 
 let currentCardIndex = 0;
-let score = 0;
 
 const playerNameInput = document.getElementById('playerName');
 const startGameButton = document.getElementById('startGame');
@@ -32,10 +31,6 @@ const answerElement = document.getElementById('answer');
 const revealAnswerButton = document.getElementById('revealAnswer');
 const prevCardButton = document.getElementById('prevCard');
 const nextCardButton = document.getElementById('nextCard');
-const mathQuestionElement = document.getElementById('mathQuestion');
-const mathAnswerInput = document.getElementById('mathAnswer');
-const submitMathAnswerButton = document.getElementById('submitMathAnswer');
-const scoreValueElement = document.getElementById('scoreValue');
 
 // Start the game
 startGameButton.addEventListener('click', () => {
@@ -53,14 +48,12 @@ function loadCard(index) {
     const card = flashcards[index];
     questionElement.textContent = card.question;
     answerElement.textContent = card.answer;
-    mathQuestionElement.textContent = card.mathQuestion;
     answerElement.classList.add('hidden'); // Hide the answer initially
 }
 
 // Reveal the answer
 revealAnswerButton.addEventListener('click', () => {
-    answerElement.classList.toggle('hidden'); // Toggle the visibility of the answer
-    console.log("Answer visibility toggled!"); // Debugging: Check if the button click is registered
+    answerElement.classList.remove('hidden'); // Show the answer
 });
 
 // Navigate to the previous card
@@ -77,20 +70,4 @@ nextCardButton.addEventListener('click', () => {
         currentCardIndex++;
         loadCard(currentCardIndex);
     }
-});
-
-// Submit math answer
-submitMathAnswerButton.addEventListener('click', () => {
-    const userAnswer = parseInt(mathAnswerInput.value.trim());
-    const correctAnswer = eval(flashcards[currentCardIndex].mathQuestion.replace("כמה זה", "").replace("?", ""));
-
-    if (userAnswer === correctAnswer) {
-        score += 10;
-        scoreValueElement.textContent = score;
-        alert("תשובה נכונה! 🎉");
-    } else {
-        alert("תשובה לא נכונה. נסה שוב!");
-    }
-
-    mathAnswerInput.value = ''; // Clear the input field
 });
