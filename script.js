@@ -59,7 +59,7 @@ function loadCard(index) {
 
 // Reveal the answer
 revealAnswerButton.addEventListener('click', () => {
-    answerElement.classList.remove('hidden'); // Show the answer
+    answerElement.classList.toggle('hidden'); // Toggle the visibility of the answer
 });
 
 // Navigate to the previous card
