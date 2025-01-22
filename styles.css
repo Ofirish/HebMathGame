@@ -40,7 +40,11 @@ h1 {
 }
 
 .game-area {
-    display: none;
+    display: none; /* Hidden by default */
+}
+
+.game-area.visible {
+    display: block; /* Show when the class is added */
 }
 
 .flashcard {

@@ -41,7 +41,7 @@ const scoreValueElement = document.getElementById('scoreValue');
 startGameButton.addEventListener('click', () => {
     const playerName = playerNameInput.value.trim();
     if (playerName) {
-        gameArea.classList.remove('hidden'); // Show the game area
+        gameArea.classList.add('visible'); // Show the game area
         loadCard(currentCardIndex); // Load the first card
     } else {
         alert("נא להכניס את שמך!"); // Alert if no name is entered
