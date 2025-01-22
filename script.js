@@ -41,10 +41,10 @@ const scoreValueElement = document.getElementById('scoreValue');
 startGameButton.addEventListener('click', () => {
     const playerName = playerNameInput.value.trim();
     if (playerName) {
-        gameArea.classList.remove('hidden');
-        loadCard(currentCardIndex);
+        gameArea.classList.remove('hidden'); // Show the game area
+        loadCard(currentCardIndex); // Load the first card
     } else {
-        alert("נא להכניס את שמך!");
+        alert("נא להכניס את שמך!"); // Alert if no name is entered
     }
 });
 
@@ -54,12 +54,12 @@ function loadCard(index) {
     questionElement.textContent = card.question;
     answerElement.textContent = card.answer;
     mathQuestionElement.textContent = card.mathQuestion;
-    answerElement.classList.add('hidden');
+    answerElement.classList.add('hidden'); // Hide the answer initially
 }
 
 // Reveal the answer
 revealAnswerButton.addEventListener('click', () => {
-    answerElement.classList.remove('hidden');
+    answerElement.classList.remove('hidden'); // Show the answer
 });
 
 // Navigate to the previous card
@@ -91,5 +91,5 @@ submitMathAnswerButton.addEventListener('click', () => {
         alert("תשובה לא נכונה. נסה שוב!");
     }
 
-    mathAnswerInput.value = '';
+    mathAnswerInput.value = ''; // Clear the input field
 });
