@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כרטיסיות ללימוד מתמטיקה</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>כרטיסיות ללימוד מתמטיקה</h1>
+        <div class="name-input">
+            <label for="playerName">הכנס את שמך:</label>
+            <input type="text" id="playerName" placeholder="שם השחקן">
+            <button id="startGame">התחל משחק</button>
+        </div>
+        <div class="game-area hidden">
+            <div class="flashcard">
+                <div class="front">
+                    <p id="question"></p>
+                </div>
+                <div class="back hidden">
+                    <p id="answer"></p>
+                </div>
+                <button id="revealAnswer">לחץ כדי לראות את התשובה</button>
+            </div>
+            <div class="navigation">
+                <button id="prevCard">כרטיסייה קודמת</button>
+                <button id="nextCard">כרטיסייה הבאה</button>
+            </div>
+            <div class="math-question">
+                <p id="mathQuestion"></p>
+                <input type="number" id="mathAnswer" placeholder="הכנס תשובה">
+                <button id="submitMathAnswer">שלח תשובה</button>
+            </div>
+            <div class="score">
+                <p>ניקוד: <span id="scoreValue">0</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
